@@ -1,16 +1,22 @@
 #include<stdio.h>
 int main()
 {
-    int n,remainder,largest=0;
+    int arr[100],max,n,d,i;
     scanf("%d",&n);
-    while(n>0)
+    max=arr[0];
+    for(i=0;i<n;i++)
     {
-        remainder=n%10;
-        if(largest<remainder)
-        {
-            largest=remainder;
-        }
-        n=n/10;
+        scanf("%d",&arr[i]);
     }
-    printf("%d",largest);
+    while(n)
+    {
+        d=n%10;
+        n=n/10;
+        if(max<d)
+        {
+            max=d;
+        }
+    }
+    printf("%d",max);
+    return 0;
 }
